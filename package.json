@@ -1,0 +1,16 @@
+{
+  "name": "blockchain-with-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jorge Calleja @codinginsideout <callejaj@proton.me> (https://www.linkedin.com/in/callejaj/)",
+  "license": "ISC",
+  "dependencies": {
+    "crypto-js": "4.2.0",
+    "hex2ascii": "0.0.3"
+  }
+}
