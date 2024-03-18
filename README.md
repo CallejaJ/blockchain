@@ -9,8 +9,13 @@ The blockchain is a system for recording a collection of data in a chain-like wa
 To install the package, run the following command in your terminal:
 
 ```javascript
-// Create a package.json file
-npm init -y
+npm install
+```
 
-// Install the crypto-js dependency
-npm install crypto-js
+## How to run
+
+To launch the app, run the following command in your terminal:
+
+```javascript
+npm run dev
+
