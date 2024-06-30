@@ -1,0 +1,64 @@
+body {
+  background-color: #2c2c2c;
+  /* Fondo gris oscuro para toda la página */
+  color: #39ff14;
+  /* Letras verde fluorescente por defecto */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App h1 {
+  color: #39ff14;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 20px;
+}
+
+.block {
+  border: 1px solid #39ff14;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #444;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #39ff14;
+  /* Letras verde fluorescente para los bloques */
+  font-size: 12px;
+  /* Letra más pequeña */
+}
+
+.block p {
+  margin: 8px 0;
+}
+
+input,
+button {
+  margin: 10px;
+  padding: 10px;
+  font-size: 14px;
+  background-color: #333;
+  color: #39ff14;
+  border: 1px solid #39ff14;
+  border-radius: 4px;
+}
+
+input::placeholder {
+  color: #39ff14;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
