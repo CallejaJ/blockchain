@@ -1,7 +1,7 @@
-// frontend/src/App.jsx
 import { useEffect, useState } from 'react';
 import { getBlocks, addBlock } from './api';
 import './App.css'; // Importa el archivo CSS
+import { Container, TextField, Button, Typography, Grid } from '@mui/material';
 
 function App() {
   const [blocks, setBlocks] = useState([]);
@@ -24,28 +24,52 @@ function App() {
     fetchBlocks(); // Actualizar la lista de bloques
   };
 
+  // Función para truncar el hash
+  const truncateHash = (hash) => {
+    if (!hash) return '...';
+    return `...${hash.slice(-10)}`;
+  };
+
   return (
-    <div className="App">
-      <h1>Blockchain</h1>
-      <input
-        type="text"
-        value={newBlockData}
-        onChange={(e) => setNewBlockData(e.target.value)} // Actualizar el estado cuando el usuario escribe
-        placeholder="Enter block data" // Texto de marcador de posición
-      />
-      <button onClick={handleAddBlock}>Add Block</button>
+    <Container className="App">
+      <Typography variant="h3" component="h1" gutterBottom color="primary" align="center">
+        Blockchain
+      </Typography>
+      <Grid container spacing={2} justifyContent="center">
+        <Grid item>
+          <TextField
+            label="Enter block data"
+            variant="outlined"
+            value={newBlockData}
+            onChange={(e) => setNewBlockData(e.target.value)}
+            InputLabelProps={{ style: { color: '#39ff14' } }} // Cambiar color del texto del marcador de posición
+            InputProps={{
+              style: { color: '#39ff14', borderColor: '#39ff14' },
+            }}
+          />
+        </Grid>
+        <Grid item
+          marginBottom={6}
+        >
+          <Button variant="contained" color="primary" onClick={handleAddBlock}>
+            Add Block
+          </Button>
+        </Grid>
+      </Grid>
       <div className="container">
         {blocks.map((block, index) => (
           <div className="block" key={index}>
-            <p><strong>Hash:</strong> {block.hash}</p>
-            <p><strong>Height:</strong> {block.height}</p>
-            <p><strong>Data:</strong> {block.body}</p>
-            <p><strong>Time:</strong> {block.time}</p>
-            <p><strong>Previous Hash:</strong> {block.previousBlockHash}</p>
+            <div className="block-content">
+              <Typography variant="body1"><strong>Hash:</strong> {truncateHash(block.hash)}</Typography>
+              <p><strong>Height:</strong> {block.height}</p>
+              <p><strong>Data:</strong> {block.body}</p>
+              <p><strong>Time:</strong> {block.time}</p>
+              <p><strong>Previous Hash:</strong> {truncateHash(block.previousBlockHash)}</p>
+            </div>
           </div>
         ))}
       </div>
-    </div>
+    </Container>
   );
 }
 
