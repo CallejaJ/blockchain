@@ -1,26 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;700&display=swap');
+
 body {
-  background-color: #2c2c2c;
-    /* Fondo gris oscuro para toda la página */
+    font-family: 'Sora', sans-serif;
+    background-color: #2c2c2c;
+      /* Fondo gris oscuro para toda la página */
       color: #39ff14;
       /* Letras verde fluorescente por defecto */
-      font-family: 'Sora', sans-serif;
-        margin: 0;
-  padding: 0;
-  min-height: 100vh;
-    /* Asegúrate de que el cuerpo ocupe toda la altura de la ventana */
+    margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      /* Asegúrate de que el cuerpo ocupe toda la altura de la ventana */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .App {
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
+    text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
     width: 100%;
     min-height: 100vh;
-    /* Asegúrate de que la aplicación ocupe toda la altura de la ventana */
+      /* Asegúrate de que la aplicación ocupe toda la altura de la ventana */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -28,38 +29,36 @@ body {
 }
 
 .App h1 {
-  color: #39ff14;
-  margin-bottom: 20px;
-    font-family: 'Sora', sans-serif;
-    /* Aplica la fuente al título */
+    color: #39ff14;
+      margin-bottom: 20px;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-    /* Cuatro columnas */
-  gap: 16px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+      /* Cuatro columnas */
+      gap: 16px;
+      width: 100%;
     max-width: 1200px;
-    /* Ajusta el ancho máximo según sea necesario */
+      /* Ajusta el ancho máximo según sea necesario */
 }
 
 .block {
-  position: relative;
-  padding: 16px;
-  background-color: #444;
-  color: #39ff14;
-    /* Letras verde fluorescente para los bloques */
+    position: relative;
+      padding: 18px;
+        background-color: #444;
+        color: #39ff14;
+        /* Letras verde fluorescente para los bloques */
       font-size: 12px;
       /* Letra más pequeña */
     border-radius: 8px;
-      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       transition: transform 0.3s, background-color 0.3s;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 200px;
+    height: 250px;
       /* Asegura una altura consistente para todos los bloques */
       width: 100%;
       /* Asegura un ancho consistente para todos los bloques */
@@ -70,13 +69,17 @@ body {
     .block-content {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+    align-items: flex-start;
       /* Alinear contenido a la izquierda */
       justify-content: center;
-      width: 80%;
+    width: 80%;
       /* Ajustar ancho del contenido */
       text-align: left;
       /* Alinear texto a la izquierda */
+      font-size: 10px;
+        /* Reducir el tamaño de la letra */
+        line-height: 1.2;
+        /* Reducir el interlineado */
     }
     
     .block:hover {
@@ -85,17 +88,17 @@ body {
 }
 
 .block p {
-  margin: 2px 0;
-    /* Reducir el interlineado */
-    visibility: hidden;
-    /* Ocultar datos inicialmente */
+    margin: 4px 0;
+      /* Reducir el margen entre párrafos */
+      visibility: hidden;
+      /* Ocultar datos inicialmente */
     opacity: 0;
     transition: visibility 0s, opacity 0.3s linear;
-  }
-  
-  .block:hover p {
+}
+
+.block:hover p {
     visibility: visible;
-    /* Mostrar datos al pasar el mouse */
+      /* Mostrar datos al pasar el mouse */
     opacity: 1;
 }
 
@@ -111,19 +114,30 @@ button {
 }
 
 input::placeholder {
-  color: #39ff14;
+    color: #39ff14;
 }
 
 button {
-  font-family: 'Sora', sans-serif;
-    /* Aplica la fuente al título */
-  cursor: pointer;
-  height: 50px;
-    /* Cambia esta altura según sea necesario */
-    line-height: 1;
-    /* Asegura que el texto esté centrado verticalmente */
+    cursor: pointer;
+      height: 55px;
+        /* Cambia esta altura según sea necesario */
+        line-height: 1;
+        /* Asegura que el texto esté centrado verticalmente */
+      font-family: 'Sora', sans-serif;
+        /* Aplica la fuente Sora al botón */
+        background-color: #555;
+        /* Cambia el color de fondo del botón */
+        color: #fff;
+        /* Cambia el color del texto del botón */
+        border: 1px solid #555;
+        /* Cambia el color del borde del botón */
+        border-radius: 4px;
+        transition: background-color 0.3s, border-color 0.3s;
 }
 
 button:hover {
-  background-color: #444;
+    background-color: #777;
+      /* Cambia el color de fondo del botón al pasar el mouse */
+      border-color: #777;
+      /* Cambia el color del borde del botón al pasar el mouse */
 }

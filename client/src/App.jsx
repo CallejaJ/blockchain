@@ -3,7 +3,7 @@ import { getBlocks, addBlock } from './api';
 import './App.css'; // Importa el archivo CSS
 import { Container, TextField, Button, Typography, Grid } from '@mui/material';
 
-function App() {
+export default function App() {
   const [blocks, setBlocks] = useState([]);
   const [newBlockData, setNewBlockData] = useState('');
 
@@ -62,7 +62,7 @@ function App() {
             <div className="block-content">
               <Typography variant="body1"><strong>Hash:</strong> {truncateHash(block.hash)}</Typography>
               <p><strong>Height:</strong> {block.height}</p>
-              <p><strong>Data:</strong> {block.body}</p>
+              <p><strong>Data:</strong> {index === 0 ? "Genesis Block" : block.body}</p> {/* Mostrar "Genesis Block" para el primer bloque */}
               <p><strong>Time:</strong> {block.time}</p>
               <p><strong>Previous Hash:</strong> {truncateHash(block.previousBlockHash)}</p>
             </div>
@@ -72,5 +72,3 @@ function App() {
     </Container>
   );
 }
-
-export default App;
